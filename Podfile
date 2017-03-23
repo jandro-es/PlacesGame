@@ -10,6 +10,7 @@ target 'PlacesGame' do
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+  pod 'PermissionScope'
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|

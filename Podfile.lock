@@ -27,6 +27,7 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - PermissionScope (1.1.1)
   - SwiftLint (0.16.1)
 
 DEPENDENCIES:
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - PermissionScope
   - SwiftLint
 
 SPEC CHECKSUMS:
@@ -49,8 +51,9 @@ SPEC CHECKSUMS:
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
 
-PODFILE CHECKSUM: 60919066c242a9ad2a4c7872c083fd6d7c802b15
+PODFILE CHECKSUM: 04f7af00a2f9d123279d9c8e6e0cc9d5a908c88b
 
 COCOAPODS: 1.2.0
