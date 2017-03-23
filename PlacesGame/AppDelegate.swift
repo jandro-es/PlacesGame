@@ -16,6 +16,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  fileprivate var locationService: LocationService!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     startExternalServices()
@@ -34,6 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   private func startInternalServices() {
-    
+    locationService = LocationService()
   }
 }

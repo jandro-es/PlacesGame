@@ -14,6 +14,7 @@
 		B1FCD3481E83DB5800AAAB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FCD3461E83DB5800AAAB40 /* LaunchScreen.storyboard */; };
 		B1FCD35A1E83DE8700AAAB40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1FCD3591E83DE8700AAAB40 /* GoogleService-Info.plist */; };
 		B1FCD35C1E83DF6D00AAAB40 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD35B1E83DF6D00AAAB40 /* Config.swift */; };
+		B1FCD35E1E83E2B000AAAB40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD35D1E83E2B000AAAB40 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B1FCD3491E83DB5800AAAB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1FCD3591E83DE8700AAAB40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Configuration/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1FCD35B1E83DF6D00AAAB40 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Configuration/Config.swift; sourceTree = "<group>"; };
+		B1FCD35D1E83E2B000AAAB40 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = Services/LocationService.swift; sourceTree = "<group>"; };
 		C187770BDDEE77AB19EBDED5 /* Pods-PlacesGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesGame/Pods-PlacesGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		B1FCD34F1E83DBCF00AAAB40 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B1FCD35D1E83E2B000AAAB40 /* LocationService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1FCD33E1E83DB5800AAAB40 /* AppDelegate.swift in Sources */,
+				B1FCD35E1E83E2B000AAAB40 /* LocationService.swift in Sources */,
 				B1FCD35C1E83DF6D00AAAB40 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
