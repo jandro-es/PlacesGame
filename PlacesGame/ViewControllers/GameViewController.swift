@@ -30,20 +30,30 @@ final class GameViewController: UIViewController, Injectable {
   
   fileprivate var selectedPlace = [String]()
   fileprivate var matches = [String]()
+  fileprivate var hits = 0 {
+    didSet {
+      self.hitsLabel.text = "\(hits)"
+    }
+  }
   
   /// Outlets
   @IBOutlet weak var placesCollection: UICollectionView!
+  @IBOutlet weak var hitsLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    modelView.fetchClosest { (places, error) in
-      if let error = error {
-        debugPrint(error.localizedDescription)
-      } else {
-        self.places = places!
-      }
-    }
+    loadPlaces()
+  }
+  
+  // MARK: - Actions
+  
+  @IBAction func restartAction(_ sender: UIButton) {
+    reloadGame()
+  }
+  
+  @IBAction func cancelAction(_ sender: UIButton) {
+    exitToStart()
   }
   
   // MARK: - Private methods
@@ -54,23 +64,54 @@ final class GameViewController: UIViewController, Injectable {
     placesCollection.collectionViewLayout = DeckLayout()
   }
   
+  fileprivate func loadPlaces() {
+    modelView.fetchClosest { (places, error) in
+      if let error = error {
+        debugPrint(error.localizedDescription)
+      } else {
+        self.places = places!
+      }
+    }
+  }
+  
   @objc fileprivate func clearSelections() {
     selectedPlace = [String]()
     placesCollection.reloadData()
+    placesCollection.isUserInteractionEnabled = true
   }
   
   @objc fileprivate func clearMatches() {
     matches.append(selectedPlace.first!)
     selectedPlace = [String]()
     placesCollection.reloadData()
+    placesCollection.isUserInteractionEnabled = true
     checkEndCondition()
+  }
+  
+  fileprivate func reloadGame() {
+    matches = [String]()
+    selectedPlace = [String]()
+    hits = 0
+    loadPlaces()
+  }
+  
+  fileprivate func exitToStart() {
+    let _ = navigationController?.popViewController(animated: true)
   }
   
   fileprivate func checkEndCondition() {
     guard matches.count == GameViewModel.numberOfPlaces else {
       return
     }
-    
+    // TODO: Add condition to add top 10
+    let contr = UIAlertController(title: "Match finished", message: "Congratulations, you've finished the match", preferredStyle: .alert)
+    contr.addAction(UIAlertAction(title: "Play again", style: .default, handler: { (_) in
+      self.reloadGame()
+    }))
+    contr.addAction(UIAlertAction(title: "Exit", style: .default, handler: { (_) in
+      self.exitToStart()
+    }))
+    present(contr, animated: true, completion: nil)
   }
 }
 
@@ -81,11 +122,14 @@ extension GameViewController: UICollectionViewDelegate {
     if selectedPlace.contains(place.id) {
       selectedPlace.append(place.id)
       collectionView.reloadItems(at: [indexPath])
+      collectionView.isUserInteractionEnabled = false
       perform(#selector(clearMatches), with: nil, afterDelay: 1.0)
     } else {
       selectedPlace.append(place.id)
       collectionView.reloadItems(at: [indexPath])
       if selectedPlace.count > 1 {
+        hits += 1
+        collectionView.isUserInteractionEnabled = false
         perform(#selector(clearSelections), with: nil, afterDelay: 1.0)
       }
     }

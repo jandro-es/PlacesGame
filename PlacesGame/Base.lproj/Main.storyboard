@@ -217,9 +217,47 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MmT-wa-W9g">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEw-ns-Wr5">
+                                        <rect key="frame" x="180" y="7.5" width="15" height="36"/>
+                                        <fontDescription key="fontDescription" name="CoolveticaRg-Regular" family="Coolvetica" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-oK-pcQ">
+                                        <rect key="frame" x="12" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="df5-aM-OUc"/>
+                                            <constraint firstAttribute="height" constant="50" id="fEf-sH-QUr"/>
+                                        </constraints>
+                                        <state key="normal" image="closeIcon"/>
+                                        <connections>
+                                            <action selector="cancelAction:" destination="4vi-hw-Zch" eventType="touchUpInside" id="hnW-2m-AQq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBS-xn-3js">
+                                        <rect key="frame" x="313" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3cO-wm-KUN"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="WvO-Ea-EW5"/>
+                                            <constraint firstAttribute="width" constant="50" id="v8G-d7-Gh3"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="zyq-VQ-NAC"/>
+                                        </constraints>
+                                        <state key="normal" image="restart"/>
+                                        <connections>
+                                            <action selector="restartAction:" destination="4vi-hw-Zch" eventType="touchUpInside" id="qOg-ir-sSz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="eEw-ns-Wr5" firstAttribute="centerX" secondItem="MmT-wa-W9g" secondAttribute="centerX" id="675-Ww-qNa"/>
+                                    <constraint firstItem="ObE-oK-pcQ" firstAttribute="leading" secondItem="MmT-wa-W9g" secondAttribute="leading" constant="12" id="HnI-mA-6SM"/>
                                     <constraint firstAttribute="height" constant="50" id="Kww-9w-2xi"/>
+                                    <constraint firstAttribute="trailing" secondItem="HBS-xn-3js" secondAttribute="trailing" constant="12" id="Ymu-BJ-YqR"/>
+                                    <constraint firstItem="ObE-oK-pcQ" firstAttribute="top" secondItem="MmT-wa-W9g" secondAttribute="top" id="hNz-EI-Ch4"/>
+                                    <constraint firstItem="HBS-xn-3js" firstAttribute="top" secondItem="MmT-wa-W9g" secondAttribute="top" id="idO-ve-6XM"/>
+                                    <constraint firstItem="eEw-ns-Wr5" firstAttribute="centerY" secondItem="MmT-wa-W9g" secondAttribute="centerY" id="lbY-iE-Vjh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -244,6 +282,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="hitsLabel" destination="eEw-ns-Wr5" id="Zel-k4-eU8"/>
                         <outlet property="placesCollection" destination="q8O-LB-owM" id="Vk8-mq-e0H"/>
                     </connections>
                 </viewController>
@@ -253,6 +292,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeIcon" width="21" height="20"/>
+        <image name="restart" width="25" height="24"/>
         <image name="startBackground" width="640" height="960"/>
     </resources>
 </document>
