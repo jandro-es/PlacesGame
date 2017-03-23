@@ -374,7 +374,7 @@
 					B1FCD3391E83DB5800AAAB40 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5R59WRDGLW;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -664,6 +664,7 @@
 			baseConfigurationReference = C187770BDDEE77AB19EBDED5 /* Pods-PlacesGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5R59WRDGLW;
 				INFOPLIST_FILE = PlacesGame/Info.plist;
@@ -671,6 +672,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filtercode.PlacesGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5e9280ae-fb28-4a5e-8a79-701196a75546";
+				PROVISIONING_PROFILE_SPECIFIER = "PlacesGame Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -680,12 +683,15 @@
 			baseConfigurationReference = 3A11A0A51095EFC15B2B1592 /* Pods-PlacesGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 5R59WRDGLW;
 				INFOPLIST_FILE = PlacesGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filtercode.PlacesGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "44950381-9bbe-4a3c-9771-b400713418a2";
+				PROVISIONING_PROFILE_SPECIFIER = "PlacesGame AdHoc";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
