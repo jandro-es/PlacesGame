@@ -16,11 +16,20 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  fileprivate var mainCoordinator: MainCoordinator!
+  fileprivate var navigationController: NavigationController!
   fileprivate var locationService: LocationService!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     startExternalServices()
     startInternalServices()
+    
+    window = UIWindow(frame: UIScreen.main.bounds)
+    navigationController = NavigationController()
+    window!.rootViewController = navigationController
+    mainCoordinator = MainCoordinator(parameters: CoordinatorParameterBag(locationService, window!))
+    mainCoordinator.start()
+    window!.makeKeyAndVisible()
     
     return true
   }
