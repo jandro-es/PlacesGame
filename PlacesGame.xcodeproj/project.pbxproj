@@ -50,6 +50,12 @@
 		B1FCD3A41E840B3000AAAB40 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3A31E840B3000AAAB40 /* LeaderboardViewController.swift */; };
 		B1FCD3A71E840C7100AAAB40 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3A61E840C7100AAAB40 /* GameViewModel.swift */; };
 		B1FCD3AA1E840D2B00AAAB40 /* GameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3A91E840D2B00AAAB40 /* GameError.swift */; };
+		B1FCD3AC1E84120800AAAB40 /* PlacesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3AB1E84120800AAAB40 /* PlacesSearch.swift */; };
+		B1FCD3AE1E8416DA00AAAB40 /* JsonIObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3AD1E8416DA00AAAB40 /* JsonIObject.swift */; };
+		B1FCD3B01E84199400AAAB40 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3AF1E84199400AAAB40 /* Place.swift */; };
+		B1FCD3B21E8420FA00AAAB40 /* DeckLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3B11E8420FA00AAAB40 /* DeckLayout.swift */; };
+		B1FCD3B51E84223800AAAB40 /* PlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3B41E84223800AAAB40 /* PlaceCollectionViewCell.swift */; };
+		B1FCD3B71E84311100AAAB40 /* MutableCollection+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FCD3B61E84311100AAAB40 /* MutableCollection+Shuffle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +105,12 @@
 		B1FCD3A31E840B3000AAAB40 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderboardViewController.swift; path = ViewControllers/LeaderboardViewController.swift; sourceTree = "<group>"; };
 		B1FCD3A61E840C7100AAAB40 /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewModel.swift; path = ViewModels/GameViewModel.swift; sourceTree = "<group>"; };
 		B1FCD3A91E840D2B00AAAB40 /* GameError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameError.swift; path = Models/GameError.swift; sourceTree = "<group>"; };
+		B1FCD3AB1E84120800AAAB40 /* PlacesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacesSearch.swift; path = Services/PlacesSearch.swift; sourceTree = "<group>"; };
+		B1FCD3AD1E8416DA00AAAB40 /* JsonIObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonIObject.swift; path = Models/JsonIObject.swift; sourceTree = "<group>"; };
+		B1FCD3AF1E84199400AAAB40 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = Models/Place.swift; sourceTree = "<group>"; };
+		B1FCD3B11E8420FA00AAAB40 /* DeckLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckLayout.swift; path = Views/DeckLayout.swift; sourceTree = "<group>"; };
+		B1FCD3B41E84223800AAAB40 /* PlaceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceCollectionViewCell.swift; path = Views/Views/PlaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1FCD3B61E84311100AAAB40 /* MutableCollection+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableCollection+Shuffle.swift"; path = "Extensions/MutableCollection+Shuffle.swift"; sourceTree = "<group>"; };
 		C187770BDDEE77AB19EBDED5 /* Pods-PlacesGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesGame/Pods-PlacesGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B1FCD35D1E83E2B000AAAB40 /* LocationService.swift */,
+				B1FCD3AB1E84120800AAAB40 /* PlacesSearch.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 				B1FCD3921E83EEF300AAAB40 /* UIFont+FontSize.swift */,
 				B1FCD3941E83EF1700AAAB40 /* UIFont+Coolvetica.swift */,
 				B1FCD3961E83EF4200AAAB40 /* UIKIt+IB.swift */,
+				B1FCD3B61E84311100AAAB40 /* MutableCollection+Shuffle.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -203,8 +217,10 @@
 		B1FCD3551E83DC1F00AAAB40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B1FCD3B31E84221A00AAAB40 /* Cells */,
 				B1FCD3411E83DB5800AAAB40 /* Main.storyboard */,
 				B1FCD3461E83DB5800AAAB40 /* LaunchScreen.storyboard */,
+				B1FCD3B11E8420FA00AAAB40 /* DeckLayout.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -274,8 +290,18 @@
 			isa = PBXGroup;
 			children = (
 				B1FCD3A91E840D2B00AAAB40 /* GameError.swift */,
+				B1FCD3AD1E8416DA00AAAB40 /* JsonIObject.swift */,
+				B1FCD3AF1E84199400AAAB40 /* Place.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		B1FCD3B31E84221A00AAAB40 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B1FCD3B41E84223800AAAB40 /* PlaceCollectionViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		B663733F11DBED1F2457EACA /* Frameworks */ = {
@@ -479,6 +505,7 @@
 				B1FCD3A01E83F5D800AAAB40 /* NavigationBar.swift in Sources */,
 				B1FCD39E1E83F5B000AAAB40 /* NavigationController.swift in Sources */,
 				B1FCD3991E83EFE300AAAB40 /* StartViewController.swift in Sources */,
+				B1FCD3B01E84199400AAAB40 /* Place.swift in Sources */,
 				B1FCD3931E83EEF300AAAB40 /* UIFont+FontSize.swift in Sources */,
 				B1FCD39B1E83F01D00AAAB40 /* Injectable.swift in Sources */,
 				B1FCD3911E83EEAA00AAAB40 /* UIFont+Lato.swift in Sources */,
@@ -486,9 +513,14 @@
 				B1FCD3661E83EC7400AAAB40 /* UIColor+PlacesGame.swift in Sources */,
 				B1FCD3A21E840B1F00AAAB40 /* GameViewController.swift in Sources */,
 				B1FCD3631E83EA1600AAAB40 /* MainCoordinator.swift in Sources */,
+				B1FCD3B21E8420FA00AAAB40 /* DeckLayout.swift in Sources */,
 				B1FCD35C1E83DF6D00AAAB40 /* Config.swift in Sources */,
 				B1FCD3AA1E840D2B00AAAB40 /* GameError.swift in Sources */,
+				B1FCD3B51E84223800AAAB40 /* PlaceCollectionViewCell.swift in Sources */,
+				B1FCD3AE1E8416DA00AAAB40 /* JsonIObject.swift in Sources */,
 				B1FCD3971E83EF4200AAAB40 /* UIKIt+IB.swift in Sources */,
+				B1FCD3B71E84311100AAAB40 /* MutableCollection+Shuffle.swift in Sources */,
+				B1FCD3AC1E84120800AAAB40 /* PlacesSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

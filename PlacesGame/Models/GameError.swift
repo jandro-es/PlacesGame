@@ -13,4 +13,7 @@ import Foundation
 /// - noLocation: No current location is available
 enum GameError: Error {
   case noLocation
+  case generic(error: NSError)
+  case status(code: Int)
+  case errorPlaces
 }
