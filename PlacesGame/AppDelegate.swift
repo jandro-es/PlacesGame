@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   fileprivate var mainCoordinator: MainCoordinator!
   fileprivate var navigationController: NavigationController!
   fileprivate var locationService: LocationService!
+  fileprivate var gameService: GameService!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     startExternalServices()
@@ -27,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     navigationController = NavigationController()
     window!.rootViewController = navigationController
-    mainCoordinator = MainCoordinator(parameters: CoordinatorParameterBag(locationService, window!))
+    mainCoordinator = MainCoordinator(parameters: CoordinatorParameterBag(locationService, gameService, window!))
     mainCoordinator.start()
     window!.makeKeyAndVisible()
     
@@ -45,5 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func startInternalServices() {
     locationService = LocationService()
+    gameService = GameService()
   }
 }

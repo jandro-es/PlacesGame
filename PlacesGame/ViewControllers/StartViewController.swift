@@ -15,6 +15,7 @@ final class StartViewController: UIViewController, Injectable {
   
   /// Injected Properties
   var locationService: LocationService!
+  var gameService: GameService!
   
   /// Per instance properties
   var pScope: PermissionScope!
@@ -39,11 +40,13 @@ final class StartViewController: UIViewController, Injectable {
   @IBAction func playAction(_ sender: UIButton) {
     let gameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: GameViewController.identifier) as! GameViewController
     gameViewController.locationService = locationService
+    gameViewController.gameService = gameService
     navigationController?.pushViewController(gameViewController, animated: true)
   }
   
   @IBAction func scoresAction(_ sender: UIButton) {
     let leaderboardViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: LeaderboardViewController.identifier) as! LeaderboardViewController
+    leaderboardViewController.gameService = gameService
     navigationController?.pushViewController(leaderboardViewController, animated: true)
   }
 }

@@ -15,11 +15,12 @@ final class GameViewController: UIViewController, Injectable {
   /// Injected Properties
   
   var locationService: LocationService!
+  var gameService: GameService!
   
   /// Private properties
   
   fileprivate lazy var modelView: GameViewModel = {
-    return GameViewModel(self.locationService)
+    return GameViewModel(self.locationService, self.gameService)
   }()
   
   fileprivate var places = [Place]() {
@@ -99,11 +100,7 @@ final class GameViewController: UIViewController, Injectable {
     let _ = navigationController?.popViewController(animated: true)
   }
   
-  fileprivate func checkEndCondition() {
-    guard matches.count == GameViewModel.numberOfPlaces else {
-      return
-    }
-    // TODO: Add condition to add top 10
+  fileprivate func presentOptions() {
     let contr = UIAlertController(title: "Match finished", message: "Congratulations, you've finished the match", preferredStyle: .alert)
     contr.addAction(UIAlertAction(title: "Play again", style: .default, handler: { (_) in
       self.reloadGame()
@@ -112,6 +109,32 @@ final class GameViewController: UIViewController, Injectable {
       self.exitToStart()
     }))
     present(contr, animated: true, completion: nil)
+  }
+  
+  fileprivate func presentEnterName() {
+    let contr = UIAlertController(title: "Match finished", message: "Congratulations, you've finished the match with a top ten score", preferredStyle: .alert)
+    contr.addTextField()
+    let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned contr] _ in
+      let nameField = contr.textFields![0]
+      guard let name = nameField.text else {
+        return
+      }
+      self.modelView.addTopTen(with: name, score: self.hits)
+      self.presentOptions()
+    }
+    contr.addAction(submitAction)
+    present(contr, animated: true, completion: nil)
+  }
+  
+  fileprivate func checkEndCondition() {
+    guard matches.count == GameViewModel.numberOfPlaces else {
+      return
+    }
+    if modelView.isTopTen(score: hits) {
+      presentEnterName()
+    } else {
+      presentOptions()
+    }
   }
 }
 

@@ -12,12 +12,14 @@ import GooglePlaces
 final class GameViewModel {
   
   fileprivate let locationService: LocationService
+  fileprivate let gameService: GameService
   fileprivate let placesSearch: PlacesSearch
   
   static let numberOfPlaces = 4
   
-  init(_ locationService: LocationService) {
+  init(_ locationService: LocationService, _ gameService: GameService) {
     self.locationService = locationService
+    self.gameService = gameService
     self.placesSearch = PlacesSearch(apiKey: Config.placesKey)
   }
   
@@ -56,5 +58,15 @@ final class GameViewModel {
         }
       }
     }
+  }
+  
+  func isTopTen(score: Int) -> Bool {
+    return gameService.isTopTen(score)
+  }
+  
+  func addTopTen(with name: String, score: Int) {
+    let score = Score(name: name, score: score)
+    gameService.addTopTen(score)
+    debugPrint("#### SCORES: \(gameService.scores())")
   }
 }

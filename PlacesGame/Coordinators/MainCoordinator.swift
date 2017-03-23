@@ -12,17 +12,20 @@ import PermissionScope
 final class MainCoordinator: Coordinator {
   
   internal var locationService: LocationService!
+  internal var gameService: GameService!
   internal var window: UIWindow?
   var navigationController: NavigationController!
   
   init(parameters: CoordinatorParameterBag) {
     self.locationService = parameters.locationService
+    self.gameService = parameters.gameService
     self.window = parameters.window
   }
   
   func start() {
     let startViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StartViewController.identifier) as! StartViewController
     startViewController.locationService = locationService
+    startViewController.gameService = gameService
     startViewController.pScope = setupPermissions()
     navigationController = NavigationController(rootViewController: startViewController)
     navigationController.navigationBar.isHidden = true

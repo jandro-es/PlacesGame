@@ -12,10 +12,12 @@ import UIKit
 class CoordinatorParameterBag {
   
   var locationService: LocationService!
+  var gameService: GameService!
   var window: UIWindow!
   
-  init(_ locationService: LocationService, _ window: UIWindow) {
+  init(_ locationService: LocationService, _ gameService: GameService, _ window: UIWindow) {
     self.locationService = locationService
+    self.gameService = gameService
     self.window = window
   }
 }
@@ -23,6 +25,7 @@ class CoordinatorParameterBag {
 protocol Coordinator {
   
   var locationService: LocationService! { get set }
+  var gameService: GameService! { get set }
   var window: UIWindow? { get set }
   
   init(parameters: CoordinatorParameterBag)

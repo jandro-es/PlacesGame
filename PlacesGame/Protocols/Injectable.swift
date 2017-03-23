@@ -11,4 +11,5 @@ import Foundation
 protocol Injectable: class {
   
   var locationService: LocationService! { get set }
+  var gameService: GameService! { get set }
 }
