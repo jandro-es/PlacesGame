@@ -34,7 +34,7 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We use this to present you a list of the closest restaurants</string>
 	<key>PLACESAPI_KEY</key>
 	<string>AIzaSyB9PGcBVGNljymV9sCyUKBY0qeDR030Lus</string>

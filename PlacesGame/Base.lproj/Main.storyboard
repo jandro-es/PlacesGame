@@ -5,8 +5,17 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Heavy.ttf">
+            <string>Lato-Heavy</string>
+        </array>
+        <array key="coolvetica rg.ttf">
+            <string>CoolveticaRg-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,14 +28,133 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startBackground" translatesAutoresizingMaskIntoConstraints="NO" id="VOs-xj-dbg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London Places" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vke-5C-BF0">
+                                <rect key="frame" x="53" y="120" width="268" height="46"/>
+                                <fontDescription key="fontDescription" name="CoolveticaRg-Regular" family="Coolvetica" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="okf-AI-oae">
+                                <rect key="frame" x="53" y="487" width="269" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiL-yA-u0t">
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="40"/>
+                                        <color key="backgroundColor" red="0.91000000000000003" green="0.16" blue="0.31" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0dH-0Y-G4H"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="23"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VGx-NR-Rnm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPY-hE-N9Y">
+                                        <rect key="frame" x="0.0" y="60" width="269" height="40"/>
+                                        <color key="backgroundColor" red="0.91000000000000003" green="0.16" blue="0.31" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Lato-Heavy" family="Lato" pointSize="23"/>
+                                        <state key="normal" title="Scores">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scoresAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2U-nJ-efk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20999999999999999" blue="0.26000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="okf-AI-oae" secondAttribute="bottom" constant="80" id="0Vn-SH-kVf"/>
+                            <constraint firstItem="vke-5C-BF0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="5Mr-A7-7DM"/>
+                            <constraint firstAttribute="trailing" secondItem="VOs-xj-dbg" secondAttribute="trailing" id="7tG-bj-fGD"/>
+                            <constraint firstItem="VOs-xj-dbg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ebl-If-yEr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VOs-xj-dbg" secondAttribute="bottom" id="Fjf-L0-qQl"/>
+                            <constraint firstItem="vke-5C-BF0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="GzX-Ww-r9i"/>
+                            <constraint firstItem="okf-AI-oae" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="TLP-Ak-7Mb"/>
+                            <constraint firstItem="VOs-xj-dbg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vf8-Bk-wfn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vke-5C-BF0" secondAttribute="trailing" constant="38" id="lvn-0c-sMO"/>
+                            <constraint firstAttribute="trailing" secondItem="VOs-xj-dbg" secondAttribute="trailing" id="pff-qj-X0C"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VOs-xj-dbg" secondAttribute="bottom" id="qVL-0x-wA5"/>
+                            <constraint firstItem="VOs-xj-dbg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rTR-od-3sm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="okf-AI-oae" secondAttribute="trailing" constant="37" id="xLM-XG-tHW"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="139"/>
+            <point key="canvasLocation" x="7" y="248"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zNC-z6-ncp">
+            <objects>
+                <viewController id="xS9-zb-hMd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HfT-h2-EL6"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Rd-CF-epr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="90X-lv-oud">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20999999999999999" blue="0.26000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ee8-rs-i31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="606"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="Uwh-tq-vZu">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="4vi-hw-Zch" customClass="GameViewController" customModule="PlacesGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jLR-Qu-R3T"/>
+                        <viewControllerLayoutGuide type="bottom" id="v2a-gX-z4v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="njM-02-LM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20999999999999999" blue="0.26000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IfP-9s-MM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="-92"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="startBackground" width="640" height="960"/>
+    </resources>
 </document>
